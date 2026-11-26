@@ -820,5 +820,15 @@
   "workspaceFiles",
   "workspaceRegistry",
   "workspaces"
- ]
+ ],
+ "conflicts": {
+  "bash": [
+   "@deepseek-ai/dsh-tool-bash",
+   "@deepseek-ai/dsh-tool-bash-persistent"
+  ],
+  "pwsh": [
+   "@deepseek-ai/dsh-tool-pwsh",
+   "@deepseek-ai/dsh-tool-pwsh-persistent"
+  ]
+ }
 }

@@ -83,12 +83,26 @@ for (const f of fs.readdirSync(presetsDir)) {
   for (const n of rows) for (const s of injects[n] ?? []) if (!have.has(s)) ambient.add(s)
 }
 for (const s of baseHave) ambient.add(s)
+// Tool names: docs/tool-catalog.md maps each tool package to the names the model sees. Two packages
+// that register the same name cannot be loaded in one scope ("tool X is already registered").
+const toolCatalog = read(path.join(D, 'docs', 'tool-catalog.md'))
+const mapStart = toolCatalog.indexOf('## Tool Package Map')
+const mapEnd = toolCatalog.indexOf('<a id=', mapStart)
+const tools = {}
+for (const line of toolCatalog.slice(mapStart, mapEnd).split('\n')) {
+  const m = /^\| `(@deepseek-ai\/[^`]+)` \| ([^|]+) \|/.exec(line)
+  if (m) tools[m[1]] = [...m[2].matchAll(/`([^`]+)`/g)].map(x => x[1])
+}
+const byName = {}
+for (const [pkg, list] of Object.entries(tools)) for (const n of list) (byName[n] ??= []).push(pkg)
+const conflicts = Object.fromEntries(Object.entries(byName).filter(([, pkgs]) => pkgs.length > 1).map(([n, pkgs]) => [n, pkgs.sort()]))
 // A service is only checked when it has a known provider and is not ambient.
 const out = {
   generatedFrom: JSON.parse(read(path.join(D, 'package.json'))).version,
   injects,
   providers: Object.fromEntries(Object.entries(providers).filter(([s]) => !ambient.has(s))),
   ambient: [...ambient].sort(),
+  conflicts,
 }
 const target = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'lib', 'deps.json')
 fs.writeFileSync(target, JSON.stringify(out, null, 1) + '\n')
@@ -96,3 +110,4 @@ const checked = new Set(Object.values(injects).flat().filter(s => out.providers[
 console.log(`wrote ${target}: ${Object.keys(injects).length} modules inject, ${checked.size} checked services, ${out.ambient.length} ambient`)
 console.log('checked services:', [...checked].sort().join(' '))
 console.log('ambient:', out.ambient.join(' '))
+console.log('tool-name conflicts:', JSON.stringify(conflicts))

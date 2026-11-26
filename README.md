@@ -13,6 +13,7 @@ A visual editor for DSH agent presets. It adds a **Preset composer** section to 
 - Opens a parameter dialog for a plugin row. Fields come from the installed DSH `docs/config-catalog.md` (144 modules in DSH 0.2.2-rc.5) with defaults from the config schema. Plugins missing from the catalog fall back to raw JSON.
 - Groups the plugin library by purpose (tools, prompt, models, subagents, sessions, permissions, shell, host services, interface, experimental) and searches by name, title and description.
 - Warns when a plugin needs a service that nothing in the preset provides (for example, persistent bash needs `terminals`, which `@deepseek-ai/dsh-terminal` provides) and offers a one-click button to add the provider. The plugin library marks such plugins with `Needs: …`. The warning does not block saving.
+- Warns when two enabled plugins register the same tool name (for example `dsh-tool-bash` and `dsh-tool-bash-persistent` both register `bash`, which the Host rejects with `tool "bash" is already registered in this scope`) and offers a button to disable the later one.
 - Creates and duplicates custom presets. Saving a shipped preset writes an override through the `configEditor` service; Reset removes it.
 
 Preset changes apply to new sessions. Existing sessions keep the preset they started with.
