@@ -830,5 +830,8 @@
    "@deepseek-ai/dsh-tool-pwsh",
    "@deepseek-ai/dsh-tool-pwsh-persistent"
   ]
- }
+ },
+ "isolated": [
+  "terminals"
+ ]
 }

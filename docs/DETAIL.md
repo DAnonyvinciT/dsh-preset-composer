@@ -8,6 +8,7 @@ Compose agent presets visually in **Settings → Preset composer**.
 - Reorder plugin rows by drag and drop or with the up and down buttons.
 - Enable or disable a row, remove it, or add one from the palette of plugins known to this profile.
 - See plugin dependencies. Some plugins wait for a service that another plugin provides, such as persistent bash waiting for `terminals`. The palette tags these plugins with `Needs: …`. If the composition has no enabled plugin that provides the service, a warning lists what is missing and an Add button inserts the provider next to it. A group that isolates a service only counts providers inside that group. The warning does not block saving.
+- Isolated services. A provider such as the terminal service must sit in a group that isolates it (`isolate: { terminals: true }`) together with the plugins that use it, or the Host fails the preset with `Preset services require isolate realms`. The warning offers to build that group in one click.
 - Spot duplicate tool names. Two enabled plugins that register the same model-visible tool, such as `bash` from both the plain and the persistent bash plugin, cannot load together. The warning names them and offers to disable the later one. A group that isolates `tools` is its own scope.
 - Nest rows in a `cordis:group` and edit its `isolate` map.
 - Edit a row's id, module name, and JSON config in the inspector.

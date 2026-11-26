@@ -96,6 +96,22 @@ for (const line of toolCatalog.slice(mapStart, mapEnd).split('\n')) {
 const byName = {}
 for (const [pkg, list] of Object.entries(tools)) for (const n of list) (byName[n] ??= []).push(pkg)
 const conflicts = Object.fromEntries(Object.entries(byName).filter(([, pkgs]) => pkgs.length > 1).map(([n, pkgs]) => [n, pkgs.sort()]))
+// Services a shipped preset isolates. The Host rejects a preset whose provider for such a service sits
+// in the root realm ("Preset services require isolate realms"). Services that shipped presets leave in
+// the root realm are not listed, because the scan cannot tell which provided names are real services.
+const isolated = new Set()
+for (const f of fs.readdirSync(presetsDir)) {
+  const lines = read(path.join(presetsDir, f)).split('\n')
+  lines.forEach((line, i) => {
+    const m = /^(\s*)isolate:\s*$/.exec(line)
+    if (!m) return
+    for (let j = i + 1; j < lines.length; j++) {
+      const k = /^(\s+)([A-Za-z0-9_]+):\s*true\s*$/.exec(lines[j])
+      if (!k || k[1].length <= m[1].length) break
+      isolated.add(k[2])
+    }
+  })
+}
 // A service is only checked when it has a known provider and is not ambient.
 const out = {
   generatedFrom: JSON.parse(read(path.join(D, 'package.json'))).version,
@@ -103,6 +119,7 @@ const out = {
   providers: Object.fromEntries(Object.entries(providers).filter(([s]) => !ambient.has(s))),
   ambient: [...ambient].sort(),
   conflicts,
+  isolated: [...isolated].filter(s => providers[s] && !ambient.has(s)).sort(),
 }
 const target = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'lib', 'deps.json')
 fs.writeFileSync(target, JSON.stringify(out, null, 1) + '\n')

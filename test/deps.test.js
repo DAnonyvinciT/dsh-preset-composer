@@ -12,11 +12,15 @@ test('loadDeps keeps only services that need a provider row', () => {
 })
 
 test('loadDeps returns empty maps when the file is missing', () => {
-  assert.deepEqual(loadDeps(new URL('./nope.json', import.meta.url)), { requires: {}, providers: {}, conflicts: {} })
+  assert.deepEqual(loadDeps(new URL('./nope.json', import.meta.url)), { requires: {}, providers: {}, conflicts: {}, isolated: [] })
 })
 
 test('loadDeps lists tool names registered by more than one plugin', () => {
   const { conflicts } = loadDeps()
   assert.deepEqual(conflicts.bash, ['@deepseek-ai/dsh-tool-bash', '@deepseek-ai/dsh-tool-bash-persistent'])
   assert.deepEqual(conflicts.pwsh, ['@deepseek-ai/dsh-tool-pwsh', '@deepseek-ai/dsh-tool-pwsh-persistent'])
+})
+
+test('loadDeps lists the checked services a shipped preset isolates', () => {
+  assert.deepEqual(loadDeps().isolated, ['terminals'])
 })

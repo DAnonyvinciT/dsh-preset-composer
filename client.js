@@ -14,7 +14,7 @@ window.__ModuleLoader__.load({
       nav: 'Preset composer',
       title: 'Preset composer',
       intro: 'Compose which plugins each agent preset loads. Changes apply to new sessions; sessions already started keep their current composition.',
-      presets: 'Presets', newPreset: 'New preset', duplicate: 'Duplicate', newPresetTip: 'New preset: starts with a persona, file tools and a shell tool', duplicateTip: 'Duplicate the selected preset as a new custom preset', loading: 'Loading…', retry: 'Retry', edit: 'Edit', editTip: 'Edit this preset: plugins, settings and the plugin library', editReadonly: 'This preset is read-only', back: 'Back', disabledRow: 'Disabled', noDesc: 'No description published', configValues: 'Settings', defaultSettings: 'Uses the plugin defaults', isolateLabel: 'Isolate', disabledWhen: 'Disabled when', openParams: 'Edit all parameters of this plugin', applyParams: 'Apply', close: 'Close', unset: 'Not set', usesDefault: 'Default not published', unsetWith: '{value} (default)', defaultTip: 'Applies when the parameter is not set', defaultIs: 'Default: {value}', requiredTag: 'required', clearValue: 'Clear', otherSettings: 'Other settings', otherSettingsNote: 'Keys this plugin does not list in its catalog entry. Kept as written.', rawNote: 'No parameter list is available for this plugin, so its config is edited as JSON.', rawNoteShape: 'This config is not a plain key-value map, so it is edited as JSON.', missingRequired: 'Not set yet: {names}. The Host validates the config when a session starts.', paramsLoading: 'Loading parameters…', depsTitle: 'Some plugins need a service that no plugin in this preset provides:', depsMissing: '{plugin} needs the "{service}" service.', depsAdd: 'Add {name}', depsNeeds: 'Needs: {services}', clashMsg: 'These plugins register the same tool "{tool}": {plugins}. The Host rejects the second one.', clashDisable: 'Disable {name}', depsNeedsTip: 'This plugin waits for these services. Add a plugin that provides them, or it will not start.', 'palGroup.tools': 'Tools', 'palGroup.prompt': 'Prompt and context', 'palGroup.model': 'Models', 'palGroup.subagent': 'Subagents', 'palGroup.session': 'Sessions and storage', 'palGroup.safety': 'Permissions and sandbox', 'palGroup.shell': 'Shell and runtime', 'palGroup.runtime': 'Host services', 'palGroup.client': 'Interface', 'palGroup.other': 'Other', 'palGroup.experimental': 'Experimental', catalogFailed: 'Could not load the parameter list ({message}). If the Host was not restarted after this plugin was updated, restart it.',
+      presets: 'Presets', newPreset: 'New preset', duplicate: 'Duplicate', newPresetTip: 'New preset: starts with a persona, file tools and a shell tool', duplicateTip: 'Duplicate the selected preset as a new custom preset', loading: 'Loading…', retry: 'Retry', edit: 'Edit', editTip: 'Edit this preset: plugins, settings and the plugin library', editReadonly: 'This preset is read-only', back: 'Back', disabledRow: 'Disabled', noDesc: 'No description published', configValues: 'Settings', defaultSettings: 'Uses the plugin defaults', isolateLabel: 'Isolate', disabledWhen: 'Disabled when', openParams: 'Edit all parameters of this plugin', applyParams: 'Apply', close: 'Close', unset: 'Not set', usesDefault: 'Default not published', unsetWith: '{value} (default)', defaultTip: 'Applies when the parameter is not set', defaultIs: 'Default: {value}', requiredTag: 'required', clearValue: 'Clear', otherSettings: 'Other settings', otherSettingsNote: 'Keys this plugin does not list in its catalog entry. Kept as written.', rawNote: 'No parameter list is available for this plugin, so its config is edited as JSON.', rawNoteShape: 'This config is not a plain key-value map, so it is edited as JSON.', missingRequired: 'Not set yet: {names}. The Host validates the config when a session starts.', paramsLoading: 'Loading parameters…', depsTitle: 'Service problems in this preset:', depsMissing: '{plugin} needs the "{service}" service, and no plugin in its group provides it.', depsLeak: '{plugin} provides the "{service}" service outside an isolating group. The Host rejects this with "Preset services require isolate realms".', depsIsolate: 'Isolate "{service}" in a group', depsAddIsolated: 'Add {name} in an isolated group', depsAdd: 'Add {name}', depsNeeds: 'Needs: {services}', clashMsg: 'These plugins register the same tool "{tool}": {plugins}. The Host rejects the second one.', clashDisable: 'Disable {name}', depsNeedsTip: 'This plugin waits for these services. Add a plugin that provides them, or it will not start.', 'palGroup.tools': 'Tools', 'palGroup.prompt': 'Prompt and context', 'palGroup.model': 'Models', 'palGroup.subagent': 'Subagents', 'palGroup.session': 'Sessions and storage', 'palGroup.safety': 'Permissions and sandbox', 'palGroup.shell': 'Shell and runtime', 'palGroup.runtime': 'Host services', 'palGroup.client': 'Interface', 'palGroup.other': 'Other', 'palGroup.experimental': 'Experimental', catalogFailed: 'Could not load the parameter list ({message}). If the Host was not restarted after this plugin was updated, restart it.',
       default: 'Default', broken: 'Broken', custom: 'Custom', shipped: 'Shipped', readonly: 'Read-only', overridden: 'Overridden',
       readonlyNote: 'This preset is not stored in an editable profile row. You can read its composition and duplicate it as a template only when its rows are available.',
       noEditor: 'This Host has no configuration editor, so presets cannot be edited here.',
@@ -41,7 +41,7 @@ window.__ModuleLoader__.load({
       nav: '预设编排',
       title: '预设编排',
       intro: '编排每个 Agent 预设加载哪些插件。修改对新会话生效，已开始的会话保持原有组合。',
-      presets: '预设', newPreset: '新建预设', duplicate: '复制', newPresetTip: '新建预设：默认带人设、文件工具和一个 shell 工具', duplicateTip: '把当前选中的预设复制为新的自定义预设', loading: '加载中…', retry: '重试', edit: '编辑', editTip: '编辑该预设：插件、预设信息和插件库', editReadonly: '该预设只读，无法编辑', back: '返回', disabledRow: '已禁用', noDesc: '该插件未提供介绍', configValues: '配置值', defaultSettings: '使用插件默认值', isolateLabel: '隔离服务', disabledWhen: '禁用条件', openParams: '编辑该插件的全部参数', applyParams: '应用', close: '关闭', unset: '未设置', usesDefault: '未提供默认值', unsetWith: '{value}（默认值）', defaultTip: '参数未设置时采用该值', defaultIs: '默认值：{value}', requiredTag: '必填', clearValue: '清除', otherSettings: '其他配置', otherSettingsNote: '插件目录里没有列出的键，按原样保留。', rawNote: '该插件没有可用的参数列表，配置按 JSON 编辑。', rawNoteShape: '该配置不是普通的键值映射，按 JSON 编辑。', missingRequired: '尚未设置：{names}。会话启动时 Host 会校验配置。', paramsLoading: '参数加载中…', depsTitle: '有插件依赖的服务，当前预设里没有插件提供：', depsMissing: '{plugin} 需要「{service}」服务。', depsAdd: '添加 {name}', depsNeeds: '依赖：{services}', clashMsg: '这些插件注册了同名工具「{tool}」：{plugins}。Host 会拒绝后加载的那个。', clashDisable: '禁用 {name}', depsNeedsTip: '该插件会等待这些服务。请同时添加提供该服务的插件，否则它不会启动。', 'palGroup.tools': '工具', 'palGroup.prompt': '提示词与上下文', 'palGroup.model': '模型', 'palGroup.subagent': '子智能体', 'palGroup.session': '会话与存储', 'palGroup.safety': '权限与沙箱', 'palGroup.shell': '终端与运行时', 'palGroup.runtime': '宿主服务', 'palGroup.client': '界面', 'palGroup.other': '其他', 'palGroup.experimental': '实验性', catalogFailed: '无法加载参数列表（{message}）。如果更新插件后没有重启 Host，请重启。',
+      presets: '预设', newPreset: '新建预设', duplicate: '复制', newPresetTip: '新建预设：默认带人设、文件工具和一个 shell 工具', duplicateTip: '把当前选中的预设复制为新的自定义预设', loading: '加载中…', retry: '重试', edit: '编辑', editTip: '编辑该预设：插件、预设信息和插件库', editReadonly: '该预设只读，无法编辑', back: '返回', disabledRow: '已禁用', noDesc: '该插件未提供介绍', configValues: '配置值', defaultSettings: '使用插件默认值', isolateLabel: '隔离服务', disabledWhen: '禁用条件', openParams: '编辑该插件的全部参数', applyParams: '应用', close: '关闭', unset: '未设置', usesDefault: '未提供默认值', unsetWith: '{value}（默认值）', defaultTip: '参数未设置时采用该值', defaultIs: '默认值：{value}', requiredTag: '必填', clearValue: '清除', otherSettings: '其他配置', otherSettingsNote: '插件目录里没有列出的键，按原样保留。', rawNote: '该插件没有可用的参数列表，配置按 JSON 编辑。', rawNoteShape: '该配置不是普通的键值映射，按 JSON 编辑。', missingRequired: '尚未设置：{names}。会话启动时 Host 会校验配置。', paramsLoading: '参数加载中…', depsTitle: '这个预设的服务配置有问题：', depsMissing: '{plugin} 需要「{service}」服务，但它所在的分组里没有插件提供。', depsLeak: '{plugin} 提供「{service}」服务，却不在隔离该服务的分组里。Host 会报错「Preset services require isolate realms」。', depsIsolate: '把「{service}」放进隔离分组', depsAddIsolated: '添加 {name}（放入隔离分组）', depsAdd: '添加 {name}', depsNeeds: '依赖：{services}', clashMsg: '这些插件注册了同名工具「{tool}」：{plugins}。Host 会拒绝后加载的那个。', clashDisable: '禁用 {name}', depsNeedsTip: '该插件会等待这些服务。请同时添加提供该服务的插件，否则它不会启动。', 'palGroup.tools': '工具', 'palGroup.prompt': '提示词与上下文', 'palGroup.model': '模型', 'palGroup.subagent': '子智能体', 'palGroup.session': '会话与存储', 'palGroup.safety': '权限与沙箱', 'palGroup.shell': '终端与运行时', 'palGroup.runtime': '宿主服务', 'palGroup.client': '界面', 'palGroup.other': '其他', 'palGroup.experimental': '实验性', catalogFailed: '无法加载参数列表（{message}）。如果更新插件后没有重启 Host，请重启。',
       default: '默认', broken: '异常', custom: '自定义', shipped: '内置', readonly: '只读', overridden: '已覆盖',
       readonlyNote: '该预设未保存在可编辑的配置行中，只能查看。',
       noEditor: '当前 Host 没有配置编辑器，无法在此编辑预设。',
@@ -116,37 +116,67 @@ window.__ModuleLoader__.load({
     }
     const samePath = (a, b) => a && b && a.length === b.length && a.every((v, i) => v === b[i])
     /**
-     * Rows that inject a service no row in their scope provides. `deps.requires[module]` lists the
-     * services a module needs a provider row for; `deps.providers[service]` lists those providers.
-     * A provider counts when it is enabled and sits in the same list, an outer list, or a group that
-     * does not isolate that service. Rows with a `!!js` condition count as enabled.
+     * Service problems in a composition, as `{ kind, path, name, service, ... }` items.
+     *
+     * A plugin that provides a service publishes it into the Host's root realm unless an enclosing
+     * group isolates that service (`isolate: { terminals: true }`). The Host rejects the preset then:
+     * "Preset services require isolate realms". So the provider and the plugins that use it have to sit
+     * in the same isolating group.
+     * - `leak`: a provider row outside any group that isolates its service. Only for services in
+     *   `deps.isolated` (the ones shipped presets isolate); for the rest the Host accepts a root provider.
+     * - `missing`: a plugin uses a service and no provider shares its realm.
+     * A disabled row is ignored; a row disabled by a `!!js` condition counts as enabled.
      */
     function missingDeps(plugins, deps) {
       const out = []
-      if (!deps || !deps.requires) return out
-      const provides = (list, service, owners) => (list || []).some(row => {
-        if (row.disabled === true) return false
-        if (owners.includes(row.name)) return true
-        return row.group === true && !(row.isolate && row.isolate[service]) && provides(childrenOf(row), service, owners)
-      })
-      const walk = (list, scopes, base) => (list || []).forEach((row, index) => {
-        const path = [...base, index]
+      if (!deps || !deps.providers || !deps.requires) return out
+      const key = (path) => (path ? path.join('.') : '')
+      const rows = []
+      const collect = (list, base, realms) => (list || []).forEach((row, index) => {
         if (row.disabled === true) return
+        const path = [...base, index]
         const kids = childrenOf(row)
-        if (kids) { walk(kids, [{ list: kids, isolate: row.isolate }, ...scopes], path); return }
-        for (const service of deps.requires[row.name] || []) {
-          const owners = deps.providers[service] || []
-          let found = false
-          // Look outward from the row's own list; an isolating group cuts off everything outside it.
-          for (const scope of scopes) {
-            if (provides(scope.list, service, owners)) { found = true; break }
-            if (scope.isolate && scope.isolate[service]) break
-          }
-          if (!found) out.push({ path, name: row.name, service, providers: owners })
-        }
+        if (kids) {
+          const next = { ...realms }
+          for (const name of Object.keys(row.isolate || {})) if (row.isolate[name]) next[name] = path
+          collect(kids, path, next)
+        } else rows.push({ row, path, realms })
       })
-      walk(plugins, [{ list: plugins }], [])
+      collect(plugins, [], {})
+      for (const service of Object.keys(deps.providers)) {
+        const owners = deps.providers[service]
+        const providers = rows.filter(r => owners.includes(r.row.name))
+        for (const p of providers) {
+          if (!p.realms[service] && (deps.isolated || []).includes(service)) out.push({ kind: 'leak', path: p.path, name: p.row.name, service, listPath: p.path.slice(0, -1) })
+        }
+        for (const c of rows) {
+          if (!(deps.requires[c.row.name] || []).includes(service)) continue
+          if (providers.some(p => key(p.realms[service]) === key(c.realms[service]))) continue
+          out.push({ kind: 'missing', path: c.path, name: c.row.name, service, providers: owners, realm: c.realms[service] || null, listPath: c.path.slice(0, -1) })
+        }
+      }
       return out
+    }
+
+    /**
+     * Put the providers of `service` and the plugins that use it, all taken from the list at
+     * `listPath`, into one new group that isolates the service. When no provider is among them,
+     * `providerName` is added inside the group.
+     */
+    function isolateService(plugins, listPath, service, deps, providerName) {
+      const owners = (deps.providers && deps.providers[service]) || []
+      return editList(plugins, listPath, (list) => {
+        const moved = []
+        const keep = []
+        for (const row of list) {
+          const takes = row.group !== true && row.disabled !== true && (owners.includes(row.name) || ((deps.requires && deps.requires[row.name]) || []).includes(service))
+          ;(takes ? moved : keep).push(row)
+        }
+        if (providerName && !moved.some(r => owners.includes(r.name))) {
+          moved.unshift({ id: uniqueId(list, providerName.replace(/^@deepseek-ai\/dsh-/, '')), name: providerName })
+        }
+        return [...keep, { id: uniqueId(keep, service), name: 'cordis:group', group: true, isolate: { [service]: true }, config: moved }]
+      })
     }
 
     /**
@@ -684,10 +714,13 @@ window.__ModuleLoader__.load({
       const unmet = useMemo(() => (draft ? missingDeps(draft.plugins, data && data.deps) : []), [draft, data])
       const clashes = useMemo(() => (draft ? toolConflicts(draft.plugins, data && data.deps) : []), [draft, data])
       const shortName = (name) => titles.get(name) || name.replace(/^@deepseek-ai\/dsh-/, '')
-      const onAddProvider = (item, provider) => edit((d) => {
-        const parent = item.path.slice(0, -1)
-        const list = listAt(d.plugins, parent) || []
-        return { ...d, plugins: addRow(d.plugins, parent, { id: uniqueId(list, provider.replace(/^@deepseek-ai\/dsh-/, '')), name: provider }) }
+      const onFixDep = (item, provider) => edit((d) => {
+        const deps = data && data.deps
+        if (item.kind === 'missing' && item.realm) {
+          const list = listAt(d.plugins, item.realm) || []
+          return { ...d, plugins: addRow(d.plugins, item.realm, { id: uniqueId(list, provider.replace(/^@deepseek-ai\/dsh-/, '')), name: provider }) }
+        }
+        return { ...d, plugins: isolateService(d.plugins, item.listPath, item.service, deps, item.kind === 'missing' ? provider : undefined) }
       })
 
       const guarded = (action) => { if (dirty) setPending(() => action); else action() }
@@ -774,9 +807,13 @@ window.__ModuleLoader__.load({
           : null
       const depsBar = unmet.length === 0 && clashes.length === 0 ? null : h('div', { className: 'dpc-deps', role: 'alert' },
         unmet.length > 0 ? h('p', { className: 'dpc-warn' }, t('depsTitle')) : null,
-        unmet.map(item => h('div', { key: item.path.join('.') + item.service, className: 'dpc-bar' },
-          h('span', { className: 'dpc-warn dpc-grow' }, t('depsMissing', { plugin: shortName(item.name), service: item.service })),
-          item.providers.map(provider => h('button', { key: provider, className: 'dpc-btn', type: 'button', disabled: busy || !editable, onClick: () => onAddProvider(item, provider) }, t('depsAdd', { name: shortName(provider) }))))),
+        unmet.map(item => h('div', { key: item.kind + item.path.join('.') + item.service, className: 'dpc-bar' },
+          h('span', { className: 'dpc-warn dpc-grow' }, item.kind === 'leak'
+            ? t('depsLeak', { plugin: shortName(item.name), service: item.service })
+            : t('depsMissing', { plugin: shortName(item.name), service: item.service })),
+          item.kind === 'leak'
+            ? h('button', { className: 'dpc-btn', type: 'button', disabled: busy || !editable, onClick: () => onFixDep(item) }, t('depsIsolate', { service: item.service }))
+            : item.providers.map(provider => h('button', { key: provider, className: 'dpc-btn', type: 'button', disabled: busy || !editable, onClick: () => onFixDep(item, provider) }, t(item.realm ? 'depsAdd' : 'depsAddIsolated', { name: shortName(provider) }))))),
         clashes.map(item => h('div', { key: 'clash' + item.tool, className: 'dpc-bar' },
           h('span', { className: 'dpc-warn dpc-grow' }, t('clashMsg', { tool: item.tool, plugins: item.rows.map(r => shortName(r.name)).join(', ') })),
           item.rows.slice(1).map(r => h('button', { key: r.path.join('.'), className: 'dpc-btn', type: 'button', disabled: busy || !editable, onClick: () => onToggle(r.path, false) }, t('clashDisable', { name: shortName(r.name) }))))))
