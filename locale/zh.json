@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "预设编排",
+    "description": "在设置中以可视化方式创建、编辑并保存 Agent 预设。",
+    "detail": "docs/DETAIL.md"
+  }
+}

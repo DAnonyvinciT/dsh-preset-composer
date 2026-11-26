@@ -1,0 +1,619 @@
+{
+ "generatedFrom": "Cordis configuration for profile web",
+ "modules": {
+  "@deepseek-ai/dsh-plugin-manager": {
+   "pnpmCommand": "pnpm",
+   "outputBytes": 16384,
+   "lockWaitMs": 120000,
+   "inspectTimeoutMs": 20000,
+   "githubConnectionTimeoutMs": 5000,
+   "gitTransportTimeoutMs": 5000,
+   "idleTimeoutMs": 600000,
+   "fallbackRegistries": [
+    "https://registry.npmmirror.com/"
+   ],
+   "versionListLimit": 20,
+   "versionLookupConcurrency": 4,
+   "detailMaxBytes": 1048576,
+   "detailImageMaxBytes": 5242880,
+   "detailFetchTimeoutMs": 15000,
+   "detailNpmFileSources": [
+    "jsdelivr",
+    "unpkg",
+    "npmmirror"
+   ]
+  },
+  "@deepseek-ai/dsh-hmr": {
+   "root": [
+    "."
+   ],
+   "ignored": [
+    "**/node_modules",
+    "**/.*",
+    "cache",
+    "data"
+   ],
+   "debounce": 100
+  },
+  "@deepseek-ai/dsh-session-log-deepseek": {
+   "enabled": true,
+   "maxBytes": 8388608
+  },
+  "@deepseek-ai/dsh-typert-loader": {
+   "packages": []
+  },
+  "@deepseek-ai/dsh-api-gateway": {
+   "websocketHeartbeatIntervalMs": 2000,
+   "streamInboxBytes": 262144,
+   "websocketCompression": "deflate"
+  },
+  "@deepseek-ai/dsh-plugin-package-inventory-deepseek": {
+   "enabled": true
+  },
+  "@deepseek-ai/dsh-jobs-local": {
+   "maxConcurrentJobsPerOwner": 10,
+   "retainBytes": 262144,
+   "settledRetainBytes": 16384,
+   "pumpPollMs": 150
+  },
+  "@deepseek-ai/dsh-deepseek-account": {
+   "platformOrigin": "https://platform.deepseek.com",
+   "harnessOrigin": "https://harness.deepseek.com",
+   "desktopPlatform": null,
+   "embeddedPageDist": "",
+   "inferenceOrigin": "https://api.deepseek.com",
+   "allowLoopbackHttp": false,
+   "rewriteBrowserOrigin": false,
+   "requestHeaders": {},
+   "accountRequestHeaders": {},
+   "requestTimeoutMs": 30000,
+   "balanceTimeoutMs": 30000,
+   "logoutMaxRetries": 5,
+   "logoutRetryDelayMs": 1000,
+   "attemptTimeoutMs": 600000
+  },
+  "@deepseek-ai/dsh-credentials-local": {
+   "watch": true,
+   "debounceMs": 100
+  },
+  "@deepseek-ai/dsh-llm-pi-ai": {
+   "providers": {}
+  },
+  "@deepseek-ai/dsh-attachment-local": {
+   "maxImageBytes": 52428800,
+   "maxImagesPerMessage": 20,
+   "maxMessageImageBytes": 209715200,
+   "maxImagePixels": 64000000,
+   "maxImageDimension": 65535,
+   "normalizedImageMaxPixels": 4194304,
+   "normalizedImageMaxDimension": 8192,
+   "normalizedImageMaxBytes": 4194304,
+   "imageCompressionConcurrency": 2
+  },
+  "@deepseek-ai/dsh-session-telemetry-otel": {
+   "mode": "FEEDBACK_ONLY"
+  },
+  "@deepseek-ai/dsh-sandbox-local": {
+   "runnerCommand": [],
+   "runnerFailureSignatures": [],
+   "probeTimeoutMs": 5000
+  },
+  "@deepseek-ai/dsh-sandbox-policy": {
+   "mode": "read-only",
+   "additionalWritableRoots": []
+  },
+  "@deepseek-ai/dsh-bash-sandbox": {
+   "timeoutMs": 120000,
+   "maxTimeoutMs": 600000,
+   "maxOutputBytes": 64000,
+   "maxSpillBytes": 67108864,
+   "graceMs": 3000
+  },
+  "@deepseek-ai/dsh-pwsh-sandbox": {
+   "timeoutMs": 120000,
+   "maxTimeoutMs": 600000,
+   "maxOutputBytes": 64000,
+   "maxSpillBytes": 67108864,
+   "graceMs": 3000
+  },
+  "@deepseek-ai/dsh-user-approval": {
+   "policy": "ask"
+  },
+  "@deepseek-ai/dsh-permission-presets": {
+   "presets": {
+    "workspace-write": {
+     "sandbox": "workspace-write",
+     "approval": "ask",
+     "name": "workspace-write",
+     "description": "Write inside the workspace and permitted temporary directories; wider retries require approval."
+    },
+    "danger-full-access": {
+     "sandbox": "danger-full-access",
+     "approval": "never",
+     "name": "danger-full-access",
+     "description": "Full file access without approval prompts."
+    }
+   }
+  },
+  "@deepseek-ai/dsh-tool-bash": {
+   "enableRunInBackground": true,
+   "promoteOnTimeout": true
+  },
+  "@deepseek-ai/dsh-tool-pwsh": {
+   "enableRunInBackground": true,
+   "promoteOnTimeout": true
+  },
+  "@deepseek-ai/dsh-tool-jobs": {
+   "waitTimeoutMs": 30000,
+   "maxWaitTimeoutMs": 600000,
+   "completionDelivery": "wakeup",
+   "inlineOutputBytes": 2048
+  },
+  "@deepseek-ai/dsh-tool-fs": {
+   "read": true,
+   "readImage": true,
+   "write": true,
+   "edit": true,
+   "applyPatch": false,
+   "readLimit": 2000,
+   "readMaxLineLength": 2000,
+   "readMaxBytes": 51200,
+   "readStreamMinSize": 10485760
+  },
+  "@deepseek-ai/dsh-skill": {
+   "collectCacheMaxEntries": 128
+  },
+  "@deepseek-ai/dsh-skill-filesystem": {
+   "providerName": "filesystem",
+   "includeDefaultRoots": true,
+   "customSkillDirs": [],
+   "watch": true,
+   "watchUsePolling": false,
+   "watchStabilityThresholdMs": 200,
+   "watchPollIntervalMs": 100,
+   "watchMaxProjects": 128,
+   "watchFollowSymlinks": true
+  },
+  "@deepseek-ai/dsh-tool-skill": {
+   "catalogDescriptionMaxLength": 500
+  },
+  "@deepseek-ai/dsh-goal": {
+   "defaultMaxGoalRounds": 256
+  },
+  "@deepseek-ai/dsh-compaction-basic": {
+   "modelPolicies": []
+  },
+  "@deepseek-ai/dsh-subagent": {
+   "maxDepth": 1,
+   "maxActiveSubagents": 8
+  },
+  "@deepseek-ai/dsh-agent-team": {
+   "maxTasks": 256,
+   "defaultEnabled": false
+  },
+  "@deepseek-ai/dsh-subagent-spawn-in-process": {
+   "providerName": "spawn"
+  },
+  "@deepseek-ai/dsh-subagent-fork-in-process": {
+   "providerName": "fork"
+  },
+  "@deepseek-ai/dsh-tool-subagent-control": {
+   "interrupt": true
+  },
+  "@deepseek-ai/dsh-ptc-runtime-node": {
+   "executionMode": "per-call",
+   "scriptPersistence": false,
+   "timeoutMs": 120000,
+   "maxTimeoutMs": 600000,
+   "maxOutputBytes": 67108864,
+   "maxOldGenerationSizeMb": 512,
+   "maxMessageBytes": 134217728,
+   "maxPendingCalls": 128,
+   "stopGraceMs": 3000,
+   "graceMs": 3000
+  },
+  "@deepseek-ai/dsh-workflow-ptc": {
+   "provider": "spawn",
+   "maxConcurrentAgents": 0,
+   "maxTotalAgents": 1000,
+   "maxItemsPerCall": 4096,
+   "syncTimeoutMs": 5000
+  },
+  "@deepseek-ai/dsh-tool-workflow": {
+   "toolName": "workflow",
+   "maxResultChars": 50000,
+   "enableRunInBackground": true
+  },
+  "@deepseek-ai/dsh-spill-local": {
+   "cleanupPeriodDays": 30
+  },
+  "@deepseek-ai/dsh-compaction-tool-result-pruner": {
+   "thresholdChars": 8192,
+   "headChars": 4096,
+   "tailChars": 1024
+  },
+  "@deepseek-ai/dsh-tool-goal": {
+   "blockedAfterConsecutiveRounds": 3
+  },
+  "@deepseek-ai/dsh-repeat-tool-reminder": {
+   "thresholds": [
+    3,
+    5,
+    8
+   ],
+   "include": [],
+   "exclude": [],
+   "argumentsPreviewChars": 500
+  },
+  "@deepseek-ai/dsh-web-search-deepseek": {
+   "apiKeyEnv": "DEEPSEEK_API_KEY",
+   "model": "deepseek-v4-flash",
+   "apiVersion": "2023-06-01",
+   "maxTokens": 4096,
+   "maxUses": 5
+  },
+  "@deepseek-ai/dsh-web-deepseek-api": {
+   "count": 10,
+   "searchRequestsPerSecond": 5,
+   "sendOriginalQuestion": true,
+   "searchBilling": "auto",
+   "fetchBilling": "auto"
+  },
+  "@deepseek-ai/dsh-web-fetch-http": {
+   "maxResponseBytes": 5000000,
+   "maxBodyChars": 100000,
+   "timeoutMs": 30000,
+   "maxRedirects": 5,
+   "userAgent": "deepseek-harness/0.0.1 (+https://github.com/deepseek-ai)"
+  },
+  "@deepseek-ai/dsh-tool-web": {
+   "search": true,
+   "fetch": true,
+   "searchMaxResults": 10,
+   "searchMaxQueries": 10,
+   "searchSummaryMaxChars": 800,
+   "fetchTimeoutMs": 30000,
+   "searchTimeoutMs": 30000,
+   "fetchMaxOutputChars": 200000
+  },
+  "@deepseek-ai/dsh-tool-executor-ptc": {
+   "maxSubCallsPerMinute": 1024,
+   "maxParallelSubCalls": 10
+  },
+  "@deepseek-ai/dsh-system-prompt": {
+   "includeHarnessIdentity": true,
+   "includeRuntimeContext": true,
+   "personaPrefix": "",
+   "personaSuffix": ""
+  },
+  "@deepseek-ai/dsh-agent-loop": {
+   "maxParallelToolCalls": 10,
+   "agents": []
+  },
+  "@deepseek-ai/dsh-fs-sandbox": {
+   "cwd": "/tmp",
+   "diffBasisMaxBytes": 10485760
+  },
+  "@deepseek-ai/dsh-llm-deepseek-api-key": {
+   "maxTokens": 256000,
+   "defaultContextWindow": 1000000,
+   "models": [
+    {
+     "id": "deepseek-flash",
+     "name": "DeepSeek-V4.1-Flash",
+     "contextWindow": 1048576,
+     "inputModalities": [
+      "text",
+      "image"
+     ],
+     "systemPromptUpdate": "in-history",
+     "toolUpdate": "addition-only"
+    },
+    {
+     "id": "deepseek-v4-pro",
+     "name": "DeepSeek-V4-Pro",
+     "description": "Stronger agentic coding, knowledge, and difficult reasoning; suited to complex or quality-critical tasks at higher cost.",
+     "contextWindow": 1048576
+    }
+   ],
+   "streamIdleTimeoutMs": 300000,
+   "maxRequestFilesBytes": 134217728,
+   "maxInlineRequestImageBytes": 20971520,
+   "maxImagesPerRequest": 600,
+   "imageOffloadByteQuantum": 67108864,
+   "inlineImageOffloadByteQuantum": 10485760,
+   "imageOffloadCountQuantum": 20,
+   "filesApiTimeoutMs": 60000,
+   "fileExpiresAfterSeconds": 604800,
+   "fileRefreshMarginSeconds": 3600,
+   "fileQuotaCleanupBatch": 100,
+   "modelsTimeoutMs": 5000,
+   "modelsMaxAgeMs": 600000,
+   "apiKeyEnv": "DEEPSEEK_API_KEY"
+  },
+  "@deepseek-ai/dsh-llm-deepseek-account": {
+   "maxTokens": 256000,
+   "defaultContextWindow": 1000000,
+   "streamIdleTimeoutMs": 300000,
+   "maxRequestFilesBytes": 134217728,
+   "maxInlineRequestImageBytes": 20971520,
+   "maxImagesPerRequest": 600,
+   "imageOffloadByteQuantum": 67108864,
+   "inlineImageOffloadByteQuantum": 10485760,
+   "imageOffloadCountQuantum": 20,
+   "filesApiTimeoutMs": 60000,
+   "fileExpiresAfterSeconds": 604800,
+   "fileRefreshMarginSeconds": 3600,
+   "fileQuotaCleanupBatch": 100,
+   "modelsTimeoutMs": 5000,
+   "modelsMaxAgeMs": 600000,
+   "modelOverrides": {}
+  },
+  "@deepseek-ai/dsh-client-product-analytics": {
+   "enabled": true,
+   "environmentQueryTimeoutMillis": 5000,
+   "environmentQueryMaxOutputBytes": 16384
+  },
+  "@deepseek-ai/dsh-tool-subagent/model-selection-settings": {
+   "enabled": false,
+   "allowedModels": []
+  },
+  "@deepseek-ai/dsh-session-log-export": {
+   "compressionLevel": 6
+  },
+  "@deepseek-ai/dsh-session-reference": {
+   "maxReferences": 3,
+   "candidateLimit": 50,
+   "referenceContextFraction": 0.2
+  },
+  "@deepseek-ai/dsh-file-reference-local": {
+   "maxResults": 20,
+   "maxEntries": 50000,
+   "excludedDirectories": [
+    ".git",
+    "node_modules",
+    "dist",
+    "build",
+    "out",
+    "coverage",
+    "target",
+    ".next",
+    ".nuxt",
+    ".turbo",
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".gradle"
+   ]
+  },
+  "@deepseek-ai/dsh-api-session-controller": {
+   "listWorkSliceMs": 16
+  },
+  "@deepseek-ai/dsh-api-job-controller": {
+   "observeFlushMs": 100,
+   "observeMaxFrameBytes": 65536
+  },
+  "@deepseek-ai/dsh-api-terminal-controller": {
+   "shellCandidates": [
+    "zsh",
+    "bash",
+    "fish",
+    "pwsh",
+    "powershell",
+    "cmd"
+   ],
+   "maxTerminals": 8,
+   "maxAgentTerminals": 4,
+   "maxCols": 500,
+   "maxRows": 200,
+   "scrollback": 1000,
+   "maxBufferedBytes": 2097152,
+   "maxInputBytes": 65536,
+   "disposeGraceMs": 1000,
+   "unattendedTimeoutMs": 7200000,
+   "activityPollIntervalMs": 30000,
+   "cleanupRetryMs": 60000
+  },
+  "@deepseek-ai/dsh-api-workspace-files": {
+   "maxBytes": 2097152,
+   "maxFileBytes": 33554432,
+   "maxLines": 5000,
+   "maxEntries": 2000,
+   "search": {}
+  },
+  "@deepseek-ai/dsh-schedule": {
+   "deliveryHistoryDays": 30,
+   "deliveryHistoryRecords": 200,
+   "newSessionIntervalSeconds": 60
+  },
+  "@deepseek-ai/dsh-client-ui-settings-account": {
+   "contactFormUrl": "https://trtgsjkv6r.feishu.cn/share/base/form/shrcnlCoGElW7MQznGy9r3YYXcg?hide_uid=1&hide_device_info=1&hide_harness_version=1",
+   "contactSource": "",
+   "version": 1,
+   "step": "welcome",
+   "usage": "compact",
+   "developerTools": false
+  },
+  "@deepseek-ai/dsh-client-ui-account-notifications": {
+   "notificationPollIntervalMs": 600000
+  },
+  "@deepseek-ai/dsh-mcp-manager": {
+   "servers": {}
+  },
+  "@deepseek-ai/dsh-api-workspace-controller": {
+   "documentsLookupTimeoutMs": 10000
+  },
+  "@deepseek-ai/dsh-cordis-host-runner": {
+   "vmTimeoutMs": 5000,
+   "clientInspectTimeoutMs": 10000
+  },
+  "@deepseek-ai/dsh-host-webserver": {
+   "compression": "none",
+   "compressionLevel": 1,
+   "compressionThresholdBytes": 1024
+  },
+  "@deepseek-ai/dsh-web-app": {
+   "openBrowser": true,
+   "printUrl": true,
+   "surfaceContext": true
+  },
+  "@deepseek-ai/dsh-client-hmr": {
+   "pollIntervalMs": 500
+  },
+  "@deepseek-ai/dsh-client-connection": {
+   "recovery": {},
+   "trustedHosts": [],
+   "cookieMaxAgeDays": 30,
+   "maxRequestBodyBytes": 314572800
+  },
+  "@deepseek-ai/dsh-client-ui-theme": {
+   "preference": "system",
+   "fontSize": 14,
+   "codeFontSize": 11,
+   "terminalFontSize": 13,
+   "textFontFamily": "",
+   "codeFontFamily": "",
+   "terminalFontFamily": ""
+  },
+  "@deepseek-ai/dsh-client-shortcuts": {
+   "stopSequenceMs": 500
+  },
+  "@deepseek-ai/dsh-office-kit": {
+   "maxConcurrentConversions": 2,
+   "maxQueuedJobs": 8,
+   "maxReaders": 32,
+   "maxSourceBytes": 104857600,
+   "maxBackgroundConversions": 1,
+   "maxCachedEntries": 8,
+   "maxCachedBytes": 134217728,
+   "maxSourceEntries": 64,
+   "outputDirectory": "/home/nimuy/.dsh/office-kit/outputs",
+   "outputRetentionMs": 86400000,
+   "maxOutputStoreBytes": 536870912,
+   "timeoutMs": 60000,
+   "maxInputBytes": 52428800,
+   "maxOutputBytes": 104857600,
+   "maxImageResolution": 192,
+   "maxArchiveEntries": 10000,
+   "maxUncompressedBytes": 262144000,
+   "maxFontFiles": 20000,
+   "maxFontFileBytes": 268435456,
+   "maxLoadedFontBytes": 536870912
+  },
+  "@deepseek-ai/dsh-skill-office": {
+   "pythonEnvironment": "workspace-dependencies"
+  },
+  "@deepseek-ai/dsh-client-ui-sidebar-documentpreview": {
+   "office": {},
+   "excel": {}
+  },
+  "@deepseek-ai/dsh-client-ui-settings": {
+   "enabled": true
+  },
+  "@deepseek-ai/dsh-client-ui-settings-models": {
+   "credentialOnboarding": true
+  },
+  "@deepseek-ai/dsh-client-ui-plugin-manager": {
+   "registryProbeEnabled": true,
+   "registryProbeTimeoutMs": 1500,
+   "registryProbeCacheTtlMs": 300000
+  },
+  "@deepseek-ai/dsh-client-ui-conversation": {
+   "busyEnter": "queue"
+  },
+  "@deepseek-ai/dsh-client-ui-chat": {
+   "collapseTiming": "completion",
+   "foldedReplies": "all",
+   "performanceUsage": "detailed",
+   "linkOpening": "sidebar"
+  },
+  "@deepseek-ai/dsh-workspace-changes": {
+   "timeoutMs": 30000,
+   "outputMaxBytes": 8388608,
+   "maxFiles": 500,
+   "maxFileBytes": 2097152,
+   "diffTimeoutMs": 100
+  },
+  "@deepseek-ai/dsh-client-ui-trajectory": {
+   "maxResultsPerSession": 1000
+  },
+  "@deepseek-ai/dsh-experimental-worktree": {
+   "retainOnArchive": false,
+   "directory": ".agents/worktrees",
+   "namePrefix": "dsh-",
+   "gitCommand": "git",
+   "nodeCommand": "node",
+   "timeoutMs": 300000,
+   "graceMs": 3000,
+   "maxOutputBytes": 65536
+  },
+  "@deepseek-ai/dsh-experimental-forge": {
+   "activeIntervalMs": 30000,
+   "idleIntervalMs": 120000,
+   "maxBackoffMs": 600000,
+   "fetchTimeoutMs": 30000
+  },
+  "@deepseek-ai/dsh-experimental-forge-github": {
+   "ghCommand": "gh",
+   "hosts": [
+    "github.com"
+   ],
+   "timeoutMs": 30000,
+   "maxOutputBytes": 8388608,
+   "maxReviewThreads": 1000,
+   "maxCommits": 250,
+   "maxViewedFiles": 3000
+  },
+  "@deepseek-ai/dsh-experimental-forge-session": {
+   "discoveryTimeoutMs": 30000
+  },
+  "@deepseek-ai/dsh-experimental-client-ui-forge": {
+   "gitCommand": "git",
+   "gitTimeoutMs": 10000,
+   "graceMs": 1000,
+   "maxOutputBytes": 1048576,
+   "readinessTimeoutMs": 15000,
+   "maxBranches": 50,
+   "worktreePrefix": "dsh-",
+   "maxDiffBytes": 8388608,
+   "maxUntrackedFiles": 100,
+   "maxCachedDiffBytes": 16777216,
+   "maxCommits": 250,
+   "testPaths": [],
+   "interfacePaths": [],
+   "maxCachedReviewBytes": 16777216,
+   "reviewRefreshMs": 60000
+  },
+  "dsh-better-sidebar": {
+   "listLimit": 1000,
+   "createTimeoutMs": 120000,
+   "autoOpenSubagent": true,
+   "autoOpenJobs": true,
+   "tasksViewMode": "graph",
+   "tasksAutoFoldSettled": true,
+   "tasksAutoFoldBranches": true,
+   "tasksAutoFoldIdle": true,
+   "jobsAutoCollapse": true,
+   "mobileNoAutoOpen": true,
+   "mobileDefaultTree": true,
+   "agentOpenTools": false,
+   "editorExplorer": false,
+   "editorGitGutter": true,
+   "explorerExclude": [
+    ".DS_Store",
+    "Thumbs.db"
+   ],
+   "htmlViewerNoSandbox": false,
+   "htmlViewerDefaultUnsafe": false,
+   "tabsEnabled": {},
+   "viewersEnabled": {},
+   "pluginSettings": {},
+   "guideRows": 6,
+   "guideOrder": [],
+   "guideHidden": {},
+   "guideAlign": "center",
+   "guideTakeover": true
+  }
+ }
+}

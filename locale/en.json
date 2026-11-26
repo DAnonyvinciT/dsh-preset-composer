@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Preset composer",
+    "description": "Build, edit and save agent presets visually in Settings.",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,10 @@
+# dsh bundle patch: custom preset store (registers presets saved from the
+# composer) and the composer API. They are separate entries so that saving a
+# preset reloads only the store, never the route that answers the save request.
+- insert:
+    - id: preset-composer-store
+      name: 'dsh-preset-composer/store'
+      config:
+        presets: []
+    - id: preset-composer
+      name: 'dsh-preset-composer'
