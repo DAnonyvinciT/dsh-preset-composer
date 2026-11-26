@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {
-  buildPalette, entryListProblem, minimalPlugins, newPresetFrom, normalizePreset, readStore, remove, revisionOf, upsert, validatePreset,
+  buildPalette, entryListProblem, minimalPlugins, newPresetFrom, normalizePreset, readStore, remove, rename, revisionOf, upsert, validatePreset,
 } from '../lib/model.js'
 
 const base = () => ({
@@ -124,4 +124,12 @@ test('minimalPlugins gives a valid persona, file tools and one platform shell', 
     assert.ok(rows.every(r => r.disabled === undefined))
   }
   assert.notEqual(minimalPlugins()[0], minimalPlugins()[0])
+})
+
+test('rename replaces a stored preset under a new id and keeps its position', () => {
+  const a = { id: 'a', plugins: [] }
+  const b = { id: 'b', plugins: [] }
+  const next = rename({ presets: [a, b] }, 'a', { id: 'c', plugins: [] })
+  assert.deepEqual(next.presets.map(p => p.id), ['c', 'b'])
+  assert.deepEqual(rename({ presets: [a] }, 'missing', b).presets.map(p => p.id), ['a', 'b'])
 })

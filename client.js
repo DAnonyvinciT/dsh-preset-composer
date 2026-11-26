@@ -468,14 +468,14 @@ window.__ModuleLoader__.load({
       })
     }
 
-    function Inspector({ draft, setDraft, selected, t, isNew, readOnly, descs }) {
+    function Inspector({ draft, setDraft, selected, t, isNew, canRename, readOnly, descs }) {
       const row = selected ? rowAt(draft.plugins, selected) : undefined
       const setRow = (patch) => setDraft({ ...draft, plugins: updateRow(draft.plugins, selected, patch) })
       const dis = readOnly
       return h('div', { className: 'dpc-panel' },
         h('p', { className: 'dpc-h' }, t('presetFields')),
         h(Field, { label: t('id'), error: ID_PATTERN.test(draft.id || '') ? undefined : t('idRule') },
-          h('input', { className: 'dpc-in', value: draft.id || '', disabled: dis || !isNew, onChange: (e) => setDraft({ ...draft, id: e.target.value }) })),
+          h('input', { className: 'dpc-in', value: draft.id || '', disabled: dis || !(isNew || canRename), onChange: (e) => setDraft({ ...draft, id: e.target.value }) })),
         h(Field, { label: t('name') }, h('input', { className: 'dpc-in', value: draft.name || '', disabled: dis, onChange: (e) => setDraft({ ...draft, name: e.target.value }) })),
         h(Field, { label: t('description') }, h('input', { className: 'dpc-in', value: draft.description || '', disabled: dis, onChange: (e) => setDraft({ ...draft, description: e.target.value }) })),
         h(Field, { label: t('order') }, h('input', { className: 'dpc-in', type: 'number', value: draft.order ?? '', disabled: dis,
@@ -771,7 +771,12 @@ window.__ModuleLoader__.load({
           if (first) open(first, false)
         }
       }
-      const save = () => run('save', { preset: draft, baseRevision: isNew ? undefined : current && current.revision }, () => draft.id)
+      const canRename = !isNew && !!current && current.source === 'custom' && !current.isDefault
+      const save = () => run('save', {
+        preset: draft,
+        previousId: canRename && current.id !== draft.id ? current.id : undefined,
+        baseRevision: isNew ? undefined : current && current.revision,
+      }, () => draft.id)
       const del = () => run('delete', { id: current.id, baseRevision: current.revision }, () => null)
       const reset = () => run('reset', { id: current.id }, () => current.id)
 
@@ -865,7 +870,7 @@ window.__ModuleLoader__.load({
             draft.plugins.length === 0 ? h('span', { className: 'dpc-sub' }, t('empty'))
               : h(Tree, { rows: draft.plugins, parent: [], selected: rowPath, onSelect: onOpenRow, onMove, onRemove, onToggle, onReorder, t, lang, titles, descs, dragRef })),
           h('div', { className: 'dpc-tools' },
-            h(Inspector, { draft, setDraft: (d) => edit(() => d), selected: rowPath, t, isNew, readOnly: !editable, descs }),
+            h(Inspector, { draft, setDraft: (d) => edit(() => d), selected: rowPath, t, isNew, canRename, readOnly: !editable, descs }),
             h(Palette, { palette: data.palette, titles, descs, onAdd, onAddGroup, t, disabled: !editable, deps: data.deps }))))
 
       return h('div', { className: 'dpc' },
