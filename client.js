@@ -14,7 +14,7 @@ window.__ModuleLoader__.load({
       nav: 'Preset composer',
       title: 'Preset composer',
       intro: 'Compose which plugins each agent preset loads. Changes apply to new sessions; sessions already started keep their current composition.',
-      presets: 'Presets', newPreset: 'New preset', duplicate: 'Duplicate', newPresetTip: 'New preset: starts with a persona, file tools and a shell tool', duplicateTip: 'Duplicate the selected preset as a new custom preset', loading: 'Loading…', retry: 'Retry', edit: 'Edit', editTip: 'Edit this preset: plugins, settings and the plugin library', editReadonly: 'This preset is read-only', back: 'Back', disabledRow: 'Disabled', noDesc: 'No description published', configValues: 'Settings', defaultSettings: 'Uses the plugin defaults', isolateLabel: 'Isolate', disabledWhen: 'Disabled when', openParams: 'Edit all parameters of this plugin', applyParams: 'Apply', close: 'Close', unset: 'Not set', usesDefault: 'Default not published', unsetWith: '{value} (default)', defaultTip: 'Applies when the parameter is not set', defaultIs: 'Default: {value}', requiredTag: 'required', clearValue: 'Clear', otherSettings: 'Other settings', otherSettingsNote: 'Keys this plugin does not list in its catalog entry. Kept as written.', rawNote: 'No parameter list is available for this plugin, so its config is edited as JSON.', rawNoteShape: 'This config is not a plain key-value map, so it is edited as JSON.', missingRequired: 'Not set yet: {names}. The Host validates the config when a session starts.', paramsLoading: 'Loading parameters…', 'palGroup.tools': 'Tools', 'palGroup.prompt': 'Prompt and context', 'palGroup.model': 'Models', 'palGroup.subagent': 'Subagents', 'palGroup.session': 'Sessions and storage', 'palGroup.safety': 'Permissions and sandbox', 'palGroup.shell': 'Shell and runtime', 'palGroup.runtime': 'Host services', 'palGroup.client': 'Interface', 'palGroup.other': 'Other', 'palGroup.experimental': 'Experimental', catalogFailed: 'Could not load the parameter list ({message}). If the Host was not restarted after this plugin was updated, restart it.',
+      presets: 'Presets', newPreset: 'New preset', duplicate: 'Duplicate', newPresetTip: 'New preset: starts with a persona, file tools and a shell tool', duplicateTip: 'Duplicate the selected preset as a new custom preset', loading: 'Loading…', retry: 'Retry', edit: 'Edit', editTip: 'Edit this preset: plugins, settings and the plugin library', editReadonly: 'This preset is read-only', back: 'Back', disabledRow: 'Disabled', noDesc: 'No description published', configValues: 'Settings', defaultSettings: 'Uses the plugin defaults', isolateLabel: 'Isolate', disabledWhen: 'Disabled when', openParams: 'Edit all parameters of this plugin', applyParams: 'Apply', close: 'Close', unset: 'Not set', usesDefault: 'Default not published', unsetWith: '{value} (default)', defaultTip: 'Applies when the parameter is not set', defaultIs: 'Default: {value}', requiredTag: 'required', clearValue: 'Clear', otherSettings: 'Other settings', otherSettingsNote: 'Keys this plugin does not list in its catalog entry. Kept as written.', rawNote: 'No parameter list is available for this plugin, so its config is edited as JSON.', rawNoteShape: 'This config is not a plain key-value map, so it is edited as JSON.', missingRequired: 'Not set yet: {names}. The Host validates the config when a session starts.', paramsLoading: 'Loading parameters…', depsTitle: 'Some plugins need a service that no plugin in this preset provides:', depsMissing: '{plugin} needs the "{service}" service.', depsAdd: 'Add {name}', depsNeeds: 'Needs: {services}', depsNeedsTip: 'This plugin waits for these services. Add a plugin that provides them, or it will not start.', 'palGroup.tools': 'Tools', 'palGroup.prompt': 'Prompt and context', 'palGroup.model': 'Models', 'palGroup.subagent': 'Subagents', 'palGroup.session': 'Sessions and storage', 'palGroup.safety': 'Permissions and sandbox', 'palGroup.shell': 'Shell and runtime', 'palGroup.runtime': 'Host services', 'palGroup.client': 'Interface', 'palGroup.other': 'Other', 'palGroup.experimental': 'Experimental', catalogFailed: 'Could not load the parameter list ({message}). If the Host was not restarted after this plugin was updated, restart it.',
       default: 'Default', broken: 'Broken', custom: 'Custom', shipped: 'Shipped', readonly: 'Read-only', overridden: 'Overridden',
       readonlyNote: 'This preset is not stored in an editable profile row. You can read its composition and duplicate it as a template only when its rows are available.',
       noEditor: 'This Host has no configuration editor, so presets cannot be edited here.',
@@ -41,7 +41,7 @@ window.__ModuleLoader__.load({
       nav: '预设编排',
       title: '预设编排',
       intro: '编排每个 Agent 预设加载哪些插件。修改对新会话生效，已开始的会话保持原有组合。',
-      presets: '预设', newPreset: '新建预设', duplicate: '复制', newPresetTip: '新建预设：默认带人设、文件工具和一个 shell 工具', duplicateTip: '把当前选中的预设复制为新的自定义预设', loading: '加载中…', retry: '重试', edit: '编辑', editTip: '编辑该预设：插件、预设信息和插件库', editReadonly: '该预设只读，无法编辑', back: '返回', disabledRow: '已禁用', noDesc: '该插件未提供介绍', configValues: '配置值', defaultSettings: '使用插件默认值', isolateLabel: '隔离服务', disabledWhen: '禁用条件', openParams: '编辑该插件的全部参数', applyParams: '应用', close: '关闭', unset: '未设置', usesDefault: '未提供默认值', unsetWith: '{value}（默认值）', defaultTip: '参数未设置时采用该值', defaultIs: '默认值：{value}', requiredTag: '必填', clearValue: '清除', otherSettings: '其他配置', otherSettingsNote: '插件目录里没有列出的键，按原样保留。', rawNote: '该插件没有可用的参数列表，配置按 JSON 编辑。', rawNoteShape: '该配置不是普通的键值映射，按 JSON 编辑。', missingRequired: '尚未设置：{names}。会话启动时 Host 会校验配置。', paramsLoading: '参数加载中…', 'palGroup.tools': '工具', 'palGroup.prompt': '提示词与上下文', 'palGroup.model': '模型', 'palGroup.subagent': '子智能体', 'palGroup.session': '会话与存储', 'palGroup.safety': '权限与沙箱', 'palGroup.shell': '终端与运行时', 'palGroup.runtime': '宿主服务', 'palGroup.client': '界面', 'palGroup.other': '其他', 'palGroup.experimental': '实验性', catalogFailed: '无法加载参数列表（{message}）。如果更新插件后没有重启 Host，请重启。',
+      presets: '预设', newPreset: '新建预设', duplicate: '复制', newPresetTip: '新建预设：默认带人设、文件工具和一个 shell 工具', duplicateTip: '把当前选中的预设复制为新的自定义预设', loading: '加载中…', retry: '重试', edit: '编辑', editTip: '编辑该预设：插件、预设信息和插件库', editReadonly: '该预设只读，无法编辑', back: '返回', disabledRow: '已禁用', noDesc: '该插件未提供介绍', configValues: '配置值', defaultSettings: '使用插件默认值', isolateLabel: '隔离服务', disabledWhen: '禁用条件', openParams: '编辑该插件的全部参数', applyParams: '应用', close: '关闭', unset: '未设置', usesDefault: '未提供默认值', unsetWith: '{value}（默认值）', defaultTip: '参数未设置时采用该值', defaultIs: '默认值：{value}', requiredTag: '必填', clearValue: '清除', otherSettings: '其他配置', otherSettingsNote: '插件目录里没有列出的键，按原样保留。', rawNote: '该插件没有可用的参数列表，配置按 JSON 编辑。', rawNoteShape: '该配置不是普通的键值映射，按 JSON 编辑。', missingRequired: '尚未设置：{names}。会话启动时 Host 会校验配置。', paramsLoading: '参数加载中…', depsTitle: '有插件依赖的服务，当前预设里没有插件提供：', depsMissing: '{plugin} 需要「{service}」服务。', depsAdd: '添加 {name}', depsNeeds: '依赖：{services}', depsNeedsTip: '该插件会等待这些服务。请同时添加提供该服务的插件，否则它不会启动。', 'palGroup.tools': '工具', 'palGroup.prompt': '提示词与上下文', 'palGroup.model': '模型', 'palGroup.subagent': '子智能体', 'palGroup.session': '会话与存储', 'palGroup.safety': '权限与沙箱', 'palGroup.shell': '终端与运行时', 'palGroup.runtime': '宿主服务', 'palGroup.client': '界面', 'palGroup.other': '其他', 'palGroup.experimental': '实验性', catalogFailed: '无法加载参数列表（{message}）。如果更新插件后没有重启 Host，请重启。',
       default: '默认', broken: '异常', custom: '自定义', shipped: '内置', readonly: '只读', overridden: '已覆盖',
       readonlyNote: '该预设未保存在可编辑的配置行中，只能查看。',
       noEditor: '当前 Host 没有配置编辑器，无法在此编辑预设。',
@@ -115,6 +115,40 @@ window.__ModuleLoader__.load({
       })
     }
     const samePath = (a, b) => a && b && a.length === b.length && a.every((v, i) => v === b[i])
+    /**
+     * Rows that inject a service no row in their scope provides. `deps.requires[module]` lists the
+     * services a module needs a provider row for; `deps.providers[service]` lists those providers.
+     * A provider counts when it is enabled and sits in the same list, an outer list, or a group that
+     * does not isolate that service. Rows with a `!!js` condition count as enabled.
+     */
+    function missingDeps(plugins, deps) {
+      const out = []
+      if (!deps || !deps.requires) return out
+      const provides = (list, service, owners) => (list || []).some(row => {
+        if (row.disabled === true) return false
+        if (owners.includes(row.name)) return true
+        return row.group === true && !(row.isolate && row.isolate[service]) && provides(childrenOf(row), service, owners)
+      })
+      const walk = (list, scopes, base) => (list || []).forEach((row, index) => {
+        const path = [...base, index]
+        if (row.disabled === true) return
+        const kids = childrenOf(row)
+        if (kids) { walk(kids, [{ list: kids, isolate: row.isolate }, ...scopes], path); return }
+        for (const service of deps.requires[row.name] || []) {
+          const owners = deps.providers[service] || []
+          let found = false
+          // Look outward from the row's own list; an isolating group cuts off everything outside it.
+          for (const scope of scopes) {
+            if (provides(scope.list, service, owners)) { found = true; break }
+            if (scope.isolate && scope.isolate[service]) break
+          }
+          if (!found) out.push({ path, name: row.name, service, providers: owners })
+        }
+      })
+      walk(plugins, [{ list: plugins }], [])
+      return out
+    }
+
     function uniqueId(list, base) {
       const taken = new Set(list.map(row => row.id).filter(Boolean))
       const root = String(base).replace(/^@[^/]+\//, '').replace(/[^a-z0-9-]+/gi, '-').replace(/^-+|-+$/g, '').toLowerCase() || 'row'
@@ -219,6 +253,7 @@ window.__ModuleLoader__.load({
 .dpc-in.bad,.dpc-ta.bad{border-color:var(--dsw-alias-state-error-primary)}
 .dpc-err{color:var(--dsw-alias-state-error-primary);font-size:12px}
 .dpc-note{color:var(--dsw-alias-state-success-primary);font-size:12px}
+.dpc-deps{display:flex;flex-direction:column;gap:4px;padding:6px 8px;border:1px solid var(--dsw-alias-state-warn-label);border-radius:8px}
 .dpc-warn{color:var(--dsw-alias-state-warn-label);font-size:12px;white-space:pre-wrap}
 .dpc-pal{max-height:360px;overflow:auto;display:flex;flex-direction:column;gap:2px}
 .dpc-palgroup{border-bottom:1px solid var(--dsw-alias-border-l3);padding:2px 0}
@@ -418,7 +453,7 @@ window.__ModuleLoader__.load({
       return hit ? hit[0] : 'other'
     }
 
-    function Palette({ palette, titles, descs, onAdd, onAddGroup, t, disabled }) {
+    function Palette({ palette, titles, descs, onAdd, onAddGroup, t, disabled, deps }) {
       const [q, setQ] = useState('')
       const [openGroups, setOpenGroups] = useState(() => new Set())
       const needle = q.trim().toLowerCase()
@@ -432,7 +467,8 @@ window.__ModuleLoader__.load({
       const item = (p) => h('div', { key: p.name, className: 'dpc-pal-item' },
         h('div', { style: { flex: 1, minWidth: 0 } },
           h('div', { className: 'dpc-mod', title: p.name }, titles.get(p.name) || p.name),
-          descs.get(p.name) ? h('p', { className: 'dpc-desc' }, descs.get(p.name)) : null),
+          descs.get(p.name) ? h('p', { className: 'dpc-desc' }, descs.get(p.name)) : null,
+          deps && deps.requires && deps.requires[p.name] ? h('span', { className: 'dpc-tag', title: t('depsNeedsTip') }, t('depsNeeds', { services: deps.requires[p.name].join(', ') })) : null),
         h('button', { className: 'dpc-btn', type: 'button', disabled, onClick: () => onAdd(p) }, t('add')))
       return h('div', { className: 'dpc-panel' },
         h('p', { className: 'dpc-h' }, t('palette')),
@@ -610,6 +646,14 @@ window.__ModuleLoader__.load({
         return map
       }, [data, lang])
 
+      const unmet = useMemo(() => (draft ? missingDeps(draft.plugins, data && data.deps) : []), [draft, data])
+      const shortName = (name) => titles.get(name) || name.replace(/^@deepseek-ai\/dsh-/, '')
+      const onAddProvider = (item, provider) => edit((d) => {
+        const parent = item.path.slice(0, -1)
+        const list = listAt(d.plugins, parent) || []
+        return { ...d, plugins: addRow(d.plugins, parent, { id: uniqueId(list, provider.replace(/^@deepseek-ai\/dsh-/, '')), name: provider }) }
+      })
+
       const guarded = (action) => { if (dirty) setPending(() => action); else action() }
 
       const edit = (fn) => { setMessage(null); setDraft(fn(draft)) }
@@ -692,6 +736,11 @@ window.__ModuleLoader__.load({
         : confirm === 'reset'
           ? h('div', { className: 'dpc-bar', role: 'alert' }, h('span', { className: 'dpc-warn' }, t('resetWarn')), h('button', { className: 'dpc-btn danger', type: 'button', disabled: busy, onClick: reset }, t('reset')), h('button', { className: 'dpc-btn', type: 'button', onClick: () => setConfirm(null) }, t('cancel')))
           : null
+      const depsBar = unmet.length === 0 ? null : h('div', { className: 'dpc-deps', role: 'alert' },
+        h('p', { className: 'dpc-warn' }, t('depsTitle')),
+        unmet.map(item => h('div', { key: item.path.join('.') + item.service, className: 'dpc-bar' },
+          h('span', { className: 'dpc-warn dpc-grow' }, t('depsMissing', { plugin: shortName(item.name), service: item.service })),
+          item.providers.map(provider => h('button', { key: provider, className: 'dpc-btn', type: 'button', disabled: busy || !editable, onClick: () => onAddProvider(item, provider) }, t('depsAdd', { name: shortName(provider) }))))))
       const brokenNote = current && current.broken ? h('span', { className: 'dpc-err' }, current.broken) : null
 
       const listPanel = h('div', { className: 'dpc-panel' },
@@ -716,6 +765,7 @@ window.__ModuleLoader__.load({
               h('button', { className: 'dpc-btn primary', type: 'button', disabled: busy || !editable, title: editable ? t('editTip') : t('editReadonly'), onClick: () => { setMessage(null); setMode('edit') } }, t('edit'))),
             msgBar,
             brokenNote,
+            depsBar,
             current && !current.plugins ? h('div', null, h('span', { className: 'dpc-sub' }, t('readonlyNote')), current.yaml ? h('pre', { className: 'dpc-yaml' }, current.yaml) : null)
               : (draft.plugins.length === 0 ? h('span', { className: 'dpc-sub' }, t('empty'))
                 : h(ViewRows, { rows: draft.plugins, titles, descs, t })))))
@@ -731,7 +781,8 @@ window.__ModuleLoader__.load({
             !isNew && current && current.source === 'custom' ? h('button', { className: 'dpc-btn danger', type: 'button', disabled: busy || current.isDefault, onClick: () => setConfirm('delete') }, t('delete')) : null),
           confirmBar,
           msgBar,
-          brokenNote),
+          brokenNote,
+          depsBar),
         h('div', { className: 'dpc-edit' },
           h('div', { className: 'dpc-panel' },
             h('p', { className: 'dpc-h' }, t('composition')),
@@ -739,7 +790,7 @@ window.__ModuleLoader__.load({
               : h(Tree, { rows: draft.plugins, parent: [], selected: rowPath, onSelect: onOpenRow, onMove, onRemove, onToggle, onReorder, t, lang, titles, descs, dragRef })),
           h('div', { className: 'dpc-tools' },
             h(Inspector, { draft, setDraft: (d) => edit(() => d), selected: rowPath, t, isNew, readOnly: !editable, descs }),
-            h(Palette, { palette: data.palette, titles, descs, onAdd, onAddGroup, t, disabled: !editable }))))
+            h(Palette, { palette: data.palette, titles, descs, onAdd, onAddGroup, t, disabled: !editable, deps: data.deps }))))
 
       return h('div', { className: 'dpc' },
         h('style', null, CSS),

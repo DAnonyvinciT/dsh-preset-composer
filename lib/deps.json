@@ -1,0 +1,824 @@
+{
+ "generatedFrom": "0.2.2-rc.5",
+ "injects": {
+  "@deepseek-ai/dsh-acp": [
+   "agents",
+   "llm",
+   "sessionPersistence",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-action-cards": [
+   "tools",
+   "agents",
+   "sessionProjections",
+   "remoteAccess"
+  ],
+  "@deepseek-ai/dsh-agent-instructions": [
+   "agents",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-agent-loop": [
+   "agents",
+   "sessions",
+   "llm",
+   "tools",
+   "systemPrompt",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-agent-preset": [
+   "agentPresets"
+  ],
+  "@deepseek-ai/dsh-agent-preset-registry": [
+   "loader",
+   "sessionProjections",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-agent-team": [
+   "agents",
+   "sessions",
+   "sessionPersistence",
+   "sessionProjections",
+   "subagents"
+  ],
+  "@deepseek-ai/dsh-agent-tool-presentation": [
+   "tools"
+  ],
+  "@deepseek-ai/dsh-api-gateway": [
+   "typert",
+   "remoteAccess"
+  ],
+  "@deepseek-ai/dsh-api-job-controller": [
+   "jobs",
+   "typert"
+  ],
+  "@deepseek-ai/dsh-api-session-controller": [
+   "agentDefaultModel",
+   "agents",
+   "attachments",
+   "fileUploads",
+   "fs",
+   "llm",
+   "remoteAccess",
+   "sessions",
+   "sessionProjections",
+   "sessionQuery",
+   "typert",
+   "typertGateway",
+   "workspaceRegistry"
+  ],
+  "@deepseek-ai/dsh-api-terminal-controller": [
+   "subprocess",
+   "sandboxPolicy",
+   "workingDirectory",
+   "typert"
+  ],
+  "@deepseek-ai/dsh-api-workspace-controller": [
+   "remoteAccess",
+   "typert",
+   "workspaceRegistry"
+  ],
+  "@deepseek-ai/dsh-api-workspace-files": [
+   "fs",
+   "sandboxPolicy",
+   "sessions",
+   "typert"
+  ],
+  "@deepseek-ai/dsh-bash-local": [
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-bash-sandbox": [
+   "subprocess",
+   "sandbox",
+   "sandboxPolicy"
+  ],
+  "@deepseek-ai/dsh-client-connection": [
+   "credentials"
+  ],
+  "@deepseek-ai/dsh-client-hmr": [
+   "clientModules",
+   "webServer"
+  ],
+  "@deepseek-ai/dsh-client-product-analytics": [
+   "deepseekAccount",
+   "productTelemetry"
+  ],
+  "@deepseek-ai/dsh-client-ui-trajectory": [
+   "sessions",
+   "typert"
+  ],
+  "@deepseek-ai/dsh-compaction-basic": [
+   "llm",
+   "tokenMeter",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-compaction-tool-result-pruner": [
+   "tokenMeter"
+  ],
+  "@deepseek-ai/dsh-cordis-host-runner": [
+   "tools"
+  ],
+  "@deepseek-ai/dsh-deepseek-account": [
+   "credentials",
+   "authorization"
+  ],
+  "@deepseek-ai/dsh-deepseek-chat-import": [
+   "typert",
+   "connection",
+   "sessionPersistence",
+   "workspaceRegistry"
+  ],
+  "@deepseek-ai/dsh-experimental-api-speech-to-text": [
+   "speechToText",
+   "typert"
+  ],
+  "@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp": [
+   "browserUse",
+   "agents",
+   "tools",
+   "systemPrompt",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-experimental-browser-use-playwright-mcp": [
+   "browserUse",
+   "agents",
+   "tools",
+   "systemPrompt",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-experimental-browser-use-stagehand-native": [
+   "browserUse",
+   "agents",
+   "tools",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-experimental-claude-code-mods": [
+   "workingDirectory",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-experimental-client-ui-cot-translation": [
+   "translator",
+   "typert",
+   "sessionController"
+  ],
+  "@deepseek-ai/dsh-experimental-client-ui-forge": [
+   "forge",
+   "forgeSession",
+   "sessionProjections",
+   "workingDirectory",
+   "fs",
+   "subprocess",
+   "sandbox",
+   "sandboxPolicy",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp": [
+   "computerUse",
+   "tools"
+  ],
+  "@deepseek-ai/dsh-experimental-cua-macos": [
+   "computerUse",
+   "tools",
+   "systemPrompt",
+   "subprocess",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-experimental-forge-github": [
+   "forge"
+  ],
+  "@deepseek-ai/dsh-experimental-forge-session": [
+   "forge",
+   "sessions",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-experimental-inspector": [
+   "webServer",
+   "connection"
+  ],
+  "@deepseek-ai/dsh-experimental-ptc-runtime-python": [
+   "sandbox",
+   "sandboxPolicy"
+  ],
+  "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice": [
+   "speechToText",
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-experimental-subagent-oar": [
+   "subagents"
+  ],
+  "@deepseek-ai/dsh-experimental-tool-subagent-oar": [
+   "tools",
+   "subagents"
+  ],
+  "@deepseek-ai/dsh-experimental-worktree": [
+   "workingDirectory",
+   "fs",
+   "subprocess",
+   "sandbox",
+   "sandboxPolicy",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-file-reference-local": [
+   "agents",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-fs-sandbox": [
+   "sandboxPolicy"
+  ],
+  "@deepseek-ai/dsh-goal": [
+   "agents",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-headless": [
+   "agentDefaultModel",
+   "agents",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-hooks-claude-code": [
+   "shell",
+   "agents",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-hooks-codex": [
+   "shell",
+   "agents",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-host-frontend-static": [
+   "webServer",
+   "connection"
+  ],
+  "@deepseek-ai/dsh-host-open-in-app": [
+   "webServer",
+   "connection",
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-host-product-telemetry-otel": [
+   "otel"
+  ],
+  "@deepseek-ai/dsh-llm-deepseek-account": [
+   "llm"
+  ],
+  "@deepseek-ai/dsh-llm-deepseek-api-key": [
+   "llm"
+  ],
+  "@deepseek-ai/dsh-llm-pi-ai": [
+   "llm"
+  ],
+  "@deepseek-ai/dsh-llm-replay": [
+   "llm"
+  ],
+  "@deepseek-ai/dsh-llm-retry": [
+   "agents",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-lsp-stdio": [
+   "fs",
+   "lsp",
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-mcp-client": [
+   "tools"
+  ],
+  "@deepseek-ai/dsh-mcp-manager": [
+   "tools"
+  ],
+  "@deepseek-ai/dsh-message-feedback": [
+   "sessionPersistence",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-permission-presets": [
+   "shell",
+   "approval",
+   "sessions",
+   "agents",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-persona": [
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-plan-mode": [
+   "tools",
+   "systemPrompt",
+   "sessionProjections",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-plugin-manager": [
+   "loader",
+   "profileContext"
+  ],
+  "@deepseek-ai/dsh-plugin-market": [
+   "pluginManager"
+  ],
+  "@deepseek-ai/dsh-plugin-package-inventory-deepseek": [
+   "agents",
+   "deepseekLlmApiExtensions",
+   "loader"
+  ],
+  "@deepseek-ai/dsh-ptc-runtime-node": [
+   "fs",
+   "subprocess",
+   "sandbox",
+   "sandboxPolicy"
+  ],
+  "@deepseek-ai/dsh-pwsh-local": [
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-pwsh-sandbox": [
+   "subprocess",
+   "sandbox",
+   "sandboxPolicy"
+  ],
+  "@deepseek-ai/dsh-sandbox-policy": [
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-schedule": [
+   "agents",
+   "sessions",
+   "storageDomain",
+   "sessionPersistence"
+  ],
+  "@deepseek-ai/dsh-sdk-app": [
+   "cmdlineArgs"
+  ],
+  "@deepseek-ai/dsh-sdk-jsonrpc-server": [
+   "agents",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-session-log-deepseek": [
+   "deepseekLlmApiExtensions",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-session-log-export": [
+   "commands",
+   "connection"
+  ],
+  "@deepseek-ai/dsh-session-projection-cache": [
+   "storageDomain",
+   "sessionProjections",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-session-query-sqlite": [
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-session-reference": [
+   "sessionQuery"
+  ],
+  "@deepseek-ai/dsh-session-telemetry-otel": [
+   "sessions",
+   "otel"
+  ],
+  "@deepseek-ai/dsh-session-title": [
+   "sessions",
+   "sessionProjections",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-session-title-all-prompts-llm": [
+   "sessionTitle",
+   "llm",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-session-title-first-prompt-llm": [
+   "sessionTitle",
+   "llm",
+   "sessions"
+  ],
+  "@deepseek-ai/dsh-skill-filesystem": [
+   "skills"
+  ],
+  "@deepseek-ai/dsh-skill-office": [
+   "skills"
+  ],
+  "@deepseek-ai/dsh-spill-policy": [
+   "tools"
+  ],
+  "@deepseek-ai/dsh-storage-domain": [
+   "storage"
+  ],
+  "@deepseek-ai/dsh-storage-json": [
+   "storage"
+  ],
+  "@deepseek-ai/dsh-storage-sqlite": [
+   "storage"
+  ],
+  "@deepseek-ai/dsh-subagent": [
+   "workingDirectory",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-subagent-acp": [
+   "subagents",
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-subagent-claude-code": [
+   "subagents",
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-subagent-codex": [
+   "subagents",
+   "subprocess"
+  ],
+  "@deepseek-ai/dsh-subagent-dsh-sdk": [
+   "subagents"
+  ],
+  "@deepseek-ai/dsh-subagent-fork-in-process": [
+   "subagents"
+  ],
+  "@deepseek-ai/dsh-subagent-spawn-in-process": [
+   "subagents"
+  ],
+  "@deepseek-ai/dsh-terminal-bash": [
+   "terminals",
+   "sandboxPolicy",
+   "subprocess",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-terminal-panel": [
+   "terminals",
+   "terminalController",
+   "sandboxPolicy",
+   "tools",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-time-context": [
+   "agents",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-tmux-context": [
+   "agents",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-token-meter": [
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-tool-agent-team": [
+   "agentTeams",
+   "subagents",
+   "tools",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-ask-user": [
+   "tools",
+   "userQuestions"
+  ],
+  "@deepseek-ai/dsh-tool-bash": [
+   "tools",
+   "shell",
+   "systemPrompt",
+   "shellEnv",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-bash-persistent": [
+   "tools",
+   "terminals",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-executor-ptc": [
+   "tools",
+   "systemPrompt",
+   "ptcRuntime"
+  ],
+  "@deepseek-ai/dsh-tool-fs": [
+   "tools",
+   "fs",
+   "systemPrompt",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-fs-search": [
+   "tools",
+   "systemPrompt",
+   "subprocess",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-goal": [
+   "agents",
+   "goals",
+   "tools",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-jobs": [
+   "tools",
+   "jobs",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-lsp": [
+   "tools",
+   "lsp",
+   "systemPrompt",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-office": [
+   "tools",
+   "fs",
+   "workingDirectory",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-tool-present": [
+   "tools",
+   "fs",
+   "agents",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-pwsh": [
+   "tools",
+   "shell",
+   "systemPrompt",
+   "shellEnv",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-pwsh-persistent": [
+   "tools",
+   "terminals",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-ralph": [
+   "tools",
+   "workflowEngine",
+   "subagents",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-session-query": [
+   "tools",
+   "systemPrompt",
+   "sessionQuery",
+   "agents"
+  ],
+  "@deepseek-ai/dsh-tool-skill": [
+   "agents",
+   "tools",
+   "skills",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-str-replace-editor": [
+   "tools",
+   "fs"
+  ],
+  "@deepseek-ai/dsh-tool-subagent": [
+   "tools",
+   "subagents",
+   "systemPrompt",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-tool-subagent-control": [
+   "tools",
+   "subagents",
+   "agents",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-terminal": [
+   "terminals",
+   "tools",
+   "systemPrompt",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-tool-todo": [
+   "tools",
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-tool-web": [
+   "tools",
+   "web",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-workflow": [
+   "tools",
+   "workflowEngine",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-tool-workspace-dependencies": [
+   "tools"
+  ],
+  "@deepseek-ai/dsh-typert-loader": [
+   "typert",
+   "loader"
+  ],
+  "@deepseek-ai/dsh-user-approval": [
+   "sessionProjections"
+  ],
+  "@deepseek-ai/dsh-web-app": [
+   "webServer"
+  ],
+  "@deepseek-ai/dsh-web-deepseek-api": [
+   "web"
+  ],
+  "@deepseek-ai/dsh-web-fetch-http": [
+   "web"
+  ],
+  "@deepseek-ai/dsh-web-search-deepseek": [
+   "web"
+  ],
+  "@deepseek-ai/dsh-webhook-github": [
+   "webServer",
+   "webhookRuntime",
+   "credentials"
+  ],
+  "@deepseek-ai/dsh-workflow-ptc": [
+   "subagents",
+   "ptcRuntime",
+   "sandboxPolicy",
+   "workingDirectory"
+  ],
+  "@deepseek-ai/dsh-working-directory": [
+   "fs",
+   "sessionProjections",
+   "systemPrompt"
+  ],
+  "@deepseek-ai/dsh-workspace-changes": [
+   "subprocess",
+   "fs"
+  ]
+ },
+ "providers": {
+  "actionCards": [
+   "@deepseek-ai/dsh-action-cards"
+  ],
+  "dshHomePath": [
+   "@deepseek-ai/dsh-app-boot"
+  ],
+  "pluginPackages": [
+   "@deepseek-ai/dsh-app-boot"
+  ],
+  "cmdlineArgs": [
+   "@deepseek-ai/dsh-cmdline"
+  ],
+  "appExit": [
+   "@deepseek-ai/dsh-cmdline"
+  ],
+  "appReady": [
+   "@deepseek-ai/dsh-cmdline"
+  ],
+  "computerUse": [
+   "@deepseek-ai/dsh-computer-use"
+  ],
+  "cuaAccess": [
+   "@deepseek-ai/dsh-cua"
+  ],
+  "deepseekChatImport": [
+   "@deepseek-ai/dsh-deepseek-chat-import"
+  ],
+  "speechController": [
+   "@deepseek-ai/dsh-experimental-api-speech-to-text"
+  ],
+  "cotTranslation": [
+   "@deepseek-ai/dsh-experimental-client-ui-cot-translation"
+  ],
+  "forgePanel": [
+   "@deepseek-ai/dsh-experimental-client-ui-forge"
+  ],
+  "forge": [
+   "@deepseek-ai/dsh-experimental-forge"
+  ],
+  "forgeSession": [
+   "@deepseek-ai/dsh-experimental-forge-session"
+  ],
+  "inspector": [
+   "@deepseek-ai/dsh-experimental-inspector"
+  ],
+  "liveshareShares": [
+   "@deepseek-ai/dsh-experimental-liveshare"
+  ],
+  "speechToText": [
+   "@deepseek-ai/dsh-experimental-speech-to-text"
+  ],
+  "translator": [
+   "@deepseek-ai/dsh-experimental-translator"
+  ],
+  "worktrees": [
+   "@deepseek-ai/dsh-experimental-worktree"
+  ],
+  "directoryPicker": [
+   "@deepseek-ai/dsh-host-directory-picker",
+   "@deepseek-ai/dsh-host-directory-picker-browse",
+   "@deepseek-ai/dsh-host-directory-picker-native"
+  ],
+  "pluginMarket": [
+   "@deepseek-ai/dsh-plugin-market"
+  ],
+  "pluginRecommendations": [
+   "@deepseek-ai/dsh-plugin-recommendations"
+  ],
+  "sdkSessionActivation": [
+   "@deepseek-ai/dsh-sdk-jsonrpc-server"
+  ],
+  "SUBPROCESS_EXECUTABLE_NOT_FOUND": [
+   "@deepseek-ai/dsh-subprocess"
+  ],
+  "terminals": [
+   "@deepseek-ai/dsh-terminal"
+  ]
+ },
+ "ambient": [
+  "CODE_RESET_FAILED",
+  "CODE_RUN_FAILED",
+  "DECLINED",
+  "accountUi",
+  "agentDefaultModel",
+  "agentLoop",
+  "agentPresets",
+  "agentTeams",
+  "agents",
+  "approval",
+  "attachments",
+  "authorization",
+  "chatFileMentions",
+  "clientModules",
+  "commandUi",
+  "commands",
+  "compaction",
+  "configEditor",
+  "configForms",
+  "connection",
+  "contextMenus",
+  "conversation",
+  "cordisInspect",
+  "credentials",
+  "credentialsController",
+  "deepseekAccount",
+  "deepseekLlmApiExtensions",
+  "directoryPickerController",
+  "dynamicCordisRunner",
+  "feedbackUi",
+  "fileActions",
+  "fileDrag",
+  "fileReferences",
+  "fileUpload",
+  "fileUploads",
+  "fs",
+  "goals",
+  "hmr",
+  "inputTriggers",
+  "jobController",
+  "jobs",
+  "llm",
+  "locale",
+  "mcpManager",
+  "mcpResources",
+  "messageFeedback",
+  "modelDirectories",
+  "officeKit",
+  "otel",
+  "permissionPresets",
+  "planMode",
+  "pluginChanges",
+  "pluginInventory",
+  "pluginManager",
+  "pluginRegistryProbe",
+  "productAnalytics",
+  "productTelemetry",
+  "ptcRuntime",
+  "remote",
+  "remoteAccess",
+  "sandbox",
+  "sandboxPolicy",
+  "schedule",
+  "sessionController",
+  "sessionFeedback",
+  "sessionFileReferences",
+  "sessionLogDeepSeek",
+  "sessionLogDownload",
+  "sessionPersistence",
+  "sessionProjectionCache",
+  "sessionProjections",
+  "sessionQuery",
+  "sessionReferenceResolver",
+  "sessionSkillCatalog",
+  "sessionTelemetry",
+  "sessionTitle",
+  "sessionToolResults",
+  "sessions",
+  "settings",
+  "settingsController",
+  "settingsSchema",
+  "shell",
+  "shellEnv",
+  "shortcuts",
+  "skills",
+  "slots",
+  "spillStore",
+  "storage",
+  "subagentModelSelection",
+  "subagents",
+  "subprocess",
+  "systemPrompt",
+  "terminalController",
+  "theme",
+  "timer",
+  "tokenMeter",
+  "toolResultPruner",
+  "tools",
+  "typert",
+  "typertGateway",
+  "uiConversation",
+  "uiSession",
+  "uiWorkspace",
+  "userQuestions",
+  "web",
+  "webApp",
+  "webServer",
+  "webTerminals",
+  "workflowEngine",
+  "workingDirectory",
+  "workspaceChanges",
+  "workspaceFiles",
+  "workspaceRegistry",
+  "workspaces"
+ ]
+}
