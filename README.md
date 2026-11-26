@@ -1,5 +1,7 @@
 # dsh-preset-composer
 
+English | [简体中文](README.zh.md)
+
 A visual editor for DSH agent presets. It adds a **Preset composer** section to Settings, next to Agent presets.
 
 ![icon](assets/icon-180.png)
